@@ -13,3 +13,7 @@ hs_err_pid*
 
 # do not include compiled java class Files
 *.class
+
+# logs
+*.log
+*.log.lck
