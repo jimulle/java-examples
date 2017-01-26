@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Lotto extends JFrame {
+    LottoEvent lottoMaddness= new LottoEvent(this);
     // set up row 1
     JPanel row1 = new JPanel();
     ButtonGroup option = new ButtonGroup();
@@ -39,6 +40,13 @@ public class Lotto extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridLayout layout = new GridLayout(5, 1, 10, 10);
         setLayout(layout);
+
+        // add listeners
+        quickpick.addItemListener(lottoMaddness);
+        personal.addItemListener(lottoMaddness);
+        stop.addActionListener(lottoMaddness);
+        play.addActionListener(lottoMaddness);
+        reset.addActionListener(lottoMaddness);
 
         FlowLayout layout1 = new FlowLayout(FlowLayout.CENTER, 10, 10);
         option.add(quickpick);
